@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="activity_main_empty_list_msg">The app list is empty :(</string>
+</resources>

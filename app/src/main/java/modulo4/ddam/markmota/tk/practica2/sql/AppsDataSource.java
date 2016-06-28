@@ -6,7 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import modulo4.ddam.markmota.tk.practica2.models.ModelApp;
 
@@ -83,6 +85,32 @@ public class AppsDataSource {
 
 
 
+    }
+
+
+    public List<ModelApp> getAllItems()
+    {
+        List<ModelApp> modelItemList = new ArrayList<>();
+
+        Cursor cursor =db.query(MySqliteHelper.APP_TABLE_NAME,null,null,null,null,null,null);
+        while (cursor.moveToNext())
+        {
+            int id=cursor.getInt(cursor.getColumnIndexOrThrow(MySqliteHelper.COLUMN_ID));
+            String name=cursor.getString(cursor.getColumnIndexOrThrow(MySqliteHelper.APP_COLUMN_NAME));
+            String description=cursor.getString(cursor.getColumnIndexOrThrow(MySqliteHelper.APP_COLUMN_DESC));
+            String developer=cursor.getString(cursor.getColumnIndexOrThrow(MySqliteHelper.APP_COLUMN_DEV));
+            int image=cursor.getInt(cursor.getColumnIndexOrThrow(MySqliteHelper.APP_COLUMN_IMG));
+            String installed= cursor.getString(cursor.getColumnIndexOrThrow(MySqliteHelper.APP_COLUMN_INSTALLED));
+            String edited= cursor.getString(cursor.getColumnIndexOrThrow(MySqliteHelper.APP_COLUMN_EDITED));
+            String updated= cursor.getString(cursor.getColumnIndexOrThrow(MySqliteHelper.APP_COLUMN_UPDATED));
+            int status= cursor.getInt(cursor.getColumnIndexOrThrow(MySqliteHelper.APP_COLUMN_STATUS));
+
+            ModelApp modelApp = new ModelApp(id,name,description,developer,image,installed,edited,updated,status);
+
+            modelItemList.add(modelApp);
+        }
+
+        return modelItemList;
     }
 
     public ModelApp getInfoItem(int id){

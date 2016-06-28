@@ -8,11 +8,17 @@ import java.util.Random;
 public class ModelImage {
 
     public final static String[] APP_IMAGES = {
-            "http://cdn2.business2community.com/wp-content/uploads/2015/11/icon.png",
-            "http://clappingmusicapp.com/assets/Products/Icons/icon-clappingmusic.png",
-            "http://www.ijailbreak.com/wp-content/uploads/2013/12/iOS-7-Cydia-Icon-3.png",
-            "https://lh5.ggpht.com/ly6G6lUNHjWKvLgeHO0-ilg7zkEXc-hCWP0Q94gdyCeejWNoDMw6h5buM0pFO0mSDKQ=w300",
-            "http://s3.amazonaws.com/totem_production/assets/logos/3963/original/Saga_Icon_1024x1024.png?1366835171"
+            "http://designroast.org/wp-content/uploads/2014/01/flat-duolingo.png",
+            "http://tapbots.com/img/apps/icon_tweetbot_ios_256.png",
+            "http://droplr.com/wp-content/uploads/2014/12/ios-icon1.png",
+            "http://a4.mzstatic.com/us/r30/Purple60/v4/02/14/1c/02141cde-cd75-8302-b16a-a19250a7bcd1/icon256.png",
+            "http://a1.mzstatic.com/eu/r30/Purple69/v4/8c/25/ff/8c25ffe7-079f-942c-67eb-4b83e7bb6e2a/icon128-2x.png",
+            "http://a1.mzstatic.com/us/r30/Purple1/v4/09/45/fa/0945fabe-7610-a9d4-58e1-87af77de7ccc/icon128-2x.png",
+            "https://modernatlas.co/img/Icon@2x.png",
+            "http://worksofwisnu.com/theme-preview/urip/layout-v2/images/app-icon/boxes128.png",
+            "http://www.morpholioapps.com/images/morpholio_board_app_icon.png",
+            "http://tyme-app.com/wp-content/uploads/2016/02/app_icon_mobile_128.png"
+
     };
 
 
