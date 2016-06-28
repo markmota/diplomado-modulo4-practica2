@@ -16,11 +16,14 @@ public class ModelImage {
     };
 
 
-    public String getImage(){
+    public String getImage(int index){
+
+        return APP_IMAGES[index];
+    }
+    public int getRandom(){
         Random rand = new Random();
         int num_images=APP_IMAGES.length;
-        int rndNumber=rand.nextInt(num_images);
-        return APP_IMAGES[rndNumber];
+        return rand.nextInt(num_images);
     }
 
 

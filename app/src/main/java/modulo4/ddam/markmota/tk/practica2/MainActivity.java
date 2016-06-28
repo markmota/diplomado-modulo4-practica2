@@ -16,7 +16,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ImageView img= (ImageView) findViewById(R.id.main_activity_img);
-        Picasso.with(getApplicationContext()).load(images.getImage()).resize(100, 100).centerCrop().into(img);
+        int random=images.getRandom();
+        String imageToUse=images.getImage(random);
+        Picasso.with(getApplicationContext()).load(imageToUse).resize(100, 100).centerCrop().into(img);
 
     }
 }
