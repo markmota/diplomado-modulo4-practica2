@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="activity_main_empty_list_msg">The app list is empty :(</string>
+    <string name="activity_edit_input_label_name">App\'s name</string>
+    <string name="activity_edit_input_label_desc">Description</string>
+    <string name="activity_edit_check_label_updated">Updated?</string>
+    <string name="activity_edit_btn_label_edit">Install</string>
+    <string name="activity_edit_input_label_dev">Developer</string>
+    <string name="activity_edit_message_empty_name">The app name can\'t be empty</string>
+    <string name="activity_edit_message_empty_desc">The app description can\'t be empty</string>
+    <string name="activity_edit_message_random_image">Random image:</string>
+    <string name="activity_edit_message_app_not_installed">App not installed, duplicated app name.</string>
+    <string name="row_list_app_status">Status:</string>
 </resources>

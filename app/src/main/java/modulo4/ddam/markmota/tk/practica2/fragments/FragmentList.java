@@ -70,7 +70,12 @@ public class FragmentList extends Fragment {
         }
         else{
             ImageView img=(ImageView) view.findViewById(R.id.fragment_list_img);
-            Picasso.with(getActivity()).load(LIST_EMPTY_IMG).resize(100, 100).centerCrop().into(img);
+            Picasso.with(getActivity())
+                    .load(LIST_EMPTY_IMG)
+                    .resize(100, 100).centerCrop()
+                    .placeholder(android.R.drawable.ic_input_get)
+                    .error(android.R.drawable.ic_dialog_alert)
+                    .into(img);
 
             emptyList.setVisibility(view.VISIBLE);
         }

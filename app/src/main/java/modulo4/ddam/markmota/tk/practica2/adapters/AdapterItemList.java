@@ -43,7 +43,7 @@ public class AdapterItemList extends ArrayAdapter<ModelApp>{
         String statusMsg="";
         switch (modelApp.status){
             case 0:
-                statusMsg=(modelApp.updated!=null? "Updated":"Installed");
+                statusMsg=(modelApp.updated!=null? "Updated on "+ modelApp.updated:"Installed on "+ modelApp.installed);
                 break;
             case 1:
                 statusMsg="Installing";
@@ -59,7 +59,13 @@ public class AdapterItemList extends ArrayAdapter<ModelApp>{
         appStatus.setText(statusMsg);
 
         String imageToUse=images.getImage(modelApp.image);
-        Picasso.with(parent.getContext()).load(imageToUse).resize(60, 60).centerCrop().into(img);
+        Picasso.with(parent.getContext())
+                .load(imageToUse)
+                .resize(60, 60)
+                .centerCrop()
+                .placeholder(android.R.drawable.ic_input_get)
+                .error(android.R.drawable.ic_dialog_alert)
+                .into(img);
 
         return convertView;
     }

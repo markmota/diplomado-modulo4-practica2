@@ -1,15 +1,16 @@
 package modulo4.ddam.markmota.tk.practica2;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.widget.ImageView;
+import android.view.MenuItem;
+import android.widget.Toast;
 
-import com.squareup.picasso.Picasso;
 
 import modulo4.ddam.markmota.tk.practica2.fragments.FragmentList;
-import modulo4.ddam.markmota.tk.practica2.models.ModelImage;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         // Setting support to Action Bar
+        toolbar.setTitle("App List");
+
         setSupportActionBar(toolbar);
         chargeFragmentListApps();
 
@@ -33,8 +36,34 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+
     // Implements list fragment functionality
     private void chargeFragmentListApps() {
         getFragmentManager().beginTransaction().replace(R.id.activity_main_fragmentHolder,new FragmentList()).commit();
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId())
+        {
+
+            case R.id.menu_list_add_item:
+                add_item();
+                return true;
+
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void add_item() {
+        Intent intent= new Intent(getApplicationContext(),EditActivity.class);
+        startActivity(intent);
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        chargeFragmentListApps();
     }
 }

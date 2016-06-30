@@ -92,7 +92,7 @@ public class AppsDataSource {
     {
         List<ModelApp> modelItemList = new ArrayList<>();
 
-        Cursor cursor =db.query(MySqliteHelper.APP_TABLE_NAME,null,null,null,null,null,null);
+        Cursor cursor =db.query(MySqliteHelper.APP_TABLE_NAME,null,null,null,null,null,MySqliteHelper.APP_COLUMN_INSTALLED+", "+MySqliteHelper.APP_COLUMN_UPDATED+", "+MySqliteHelper.APP_COLUMN_EDITED+" ASC");
         while (cursor.moveToNext())
         {
             int id=cursor.getInt(cursor.getColumnIndexOrThrow(MySqliteHelper.COLUMN_ID));

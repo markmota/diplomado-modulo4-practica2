@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/miCompose"
+        android:id="@+id/menu_list_add_item"
         android:icon="@android:drawable/ic_menu_add"
         app:showAsAction="ifRoom"
         android:title="Install App">
