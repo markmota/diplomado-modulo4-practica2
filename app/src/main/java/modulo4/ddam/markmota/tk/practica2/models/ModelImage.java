@@ -8,8 +8,7 @@ import java.util.Random;
 public class ModelImage {
 
     public final static String[] APP_IMAGES = {
-            "http://designroast.org/wp-content/uploads/2014/01/flat-duolingo.png",
-            "http://tapbots.com/img/apps/icon_tweetbot_ios_256.png",
+            "http://icons.iconarchive.com/icons/fasticon/angry-birds/256/blue-bird-icon.png",
             "http://droplr.com/wp-content/uploads/2014/12/ios-icon1.png",
             "http://a4.mzstatic.com/us/r30/Purple60/v4/02/14/1c/02141cde-cd75-8302-b16a-a19250a7bcd1/icon256.png",
             "http://a1.mzstatic.com/eu/r30/Purple69/v4/8c/25/ff/8c25ffe7-079f-942c-67eb-4b83e7bb6e2a/icon128-2x.png",

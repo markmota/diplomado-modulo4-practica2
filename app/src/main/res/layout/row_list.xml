@@ -7,7 +7,18 @@
     <LinearLayout
         android:layout_weight="0.7"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ProgressBar
+            android:id="@+id/row_list_img_loader"
+            android:indeterminate="true"
+            android:layout_gravity="center_vertical"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="@dimen/margin_l"
+            android:visibility="gone"/>
+
         <ImageView
             android:id="@+id/row_list_row_image_view"
             android:layout_margin="@dimen/margin_l"

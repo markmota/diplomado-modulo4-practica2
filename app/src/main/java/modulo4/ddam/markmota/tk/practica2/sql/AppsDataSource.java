@@ -55,7 +55,7 @@ public class AppsDataSource {
         }
         return false;
     }
-    public void editItem(ModelApp modelApp){
+    public boolean editItem(ModelApp modelApp){
 
 
         int id=modelApp.id;
@@ -82,7 +82,7 @@ public class AppsDataSource {
         String[] args = new String[] {String.valueOf(id)};
         String where= MySqliteHelper.COLUMN_ID+"=? ";
         db.update(MySqliteHelper.APP_TABLE_NAME,fields_to_update,where,args);
-
+        return true;
 
 
     }

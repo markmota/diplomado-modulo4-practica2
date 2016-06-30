@@ -11,4 +11,9 @@
     <string name="activity_edit_message_random_image">Random image:</string>
     <string name="activity_edit_message_app_not_installed">App not installed, duplicated app name.</string>
     <string name="row_list_app_status">Status:</string>
+    <string name="activity_edit_input_label_status">Status</string>
+    <string name="activity_detal_btn_label_update">Update</string>
+    <string name="activity_detail_message_noApp_info">Could\'t load app information detail :(</string>
+    <string name="activity_edit_btn_label_change">Edit</string>
+    <string name="activity_edit_message_app_edited">The app was edited!</string>
 </resources>

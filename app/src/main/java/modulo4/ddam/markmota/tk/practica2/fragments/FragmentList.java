@@ -3,6 +3,7 @@ package modulo4.ddam.markmota.tk.practica2.fragments;
 
 
 import android.animation.LayoutTransition;
+import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.app.Fragment;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
+import modulo4.ddam.markmota.tk.practica2.DetailActivity;
 import modulo4.ddam.markmota.tk.practica2.R;
 import modulo4.ddam.markmota.tk.practica2.adapters.AdapterItemList;
 import modulo4.ddam.markmota.tk.practica2.models.ModelApp;
@@ -54,9 +56,9 @@ public class FragmentList extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 AdapterItemList adapter= (AdapterItemList) parent.getAdapter();
                 ModelApp modelApp = adapter.getItem(position);
-                //Intent intent= new Intent(parent.getContext(),EditAppActivity.class);
-                //intent.putExtra("key_app_id",modelApp.id);
-                //startActivity(intent);
+                Intent intent= new Intent(parent.getContext(),DetailActivity.class);
+                intent.putExtra("key_app_id",modelApp.id);
+                startActivity(intent);
 
             }
         });
