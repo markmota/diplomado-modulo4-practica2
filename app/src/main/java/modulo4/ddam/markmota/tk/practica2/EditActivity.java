@@ -63,6 +63,8 @@ public class EditActivity extends AppCompatActivity  {
                 .error(android.R.drawable.ic_dialog_alert)
                 .into(appImg);
 
+        // Test to se image id, just for debug proposes, comment to production
+        //appName.setText(String.valueOf(image));
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         // Setting support to Action Bar

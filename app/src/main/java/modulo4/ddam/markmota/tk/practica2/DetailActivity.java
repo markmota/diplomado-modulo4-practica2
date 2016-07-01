@@ -1,9 +1,13 @@
 package modulo4.ddam.markmota.tk.practica2;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,7 +17,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import com.squareup.picasso.Picasso;
+
+import java.text.SimpleDateFormat;
+
 
 import modulo4.ddam.markmota.tk.practica2.models.ModelApp;
 import modulo4.ddam.markmota.tk.practica2.models.ModelImage;
@@ -32,6 +40,9 @@ public class DetailActivity extends AppCompatActivity {
     private ProgressBar loading;
     private Button updatedBtn;
     private Button uninstallBtn;
+    private Button openBtn;
+    SimpleDateFormat date_format = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
+
 
     ModelImage images=new ModelImage();
 
@@ -53,6 +64,11 @@ public class DetailActivity extends AppCompatActivity {
         loading=(ProgressBar)findViewById(R.id.activity_detail_img_loader);
         uninstallBtn=(Button) findViewById(R.id.activity_detail_btn_uninstall);
         updatedBtn=(Button) findViewById(R.id.activity_detail_btn_update);
+        openBtn=(Button) findViewById(R.id.activity_detail_btn_open);
+
+
+
+
 
 
         //Charging info from the database to the layout
@@ -77,6 +93,7 @@ public class DetailActivity extends AppCompatActivity {
                 finish();
             }
         });
+
 
     }
 
@@ -136,6 +153,41 @@ public class DetailActivity extends AppCompatActivity {
                 appImg.setVisibility(View.GONE);
                 break;
         }
+        // Action to de open app, it will be a url
+        openBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "http://www.google.com";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+
+            }
+        });
+
+        // Action to the desinstall buton
+        uninstallBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new AlertDialog.Builder(v.getContext())
+                        .setTitle(R.string.activity_detail_uninstall_title)
+                        .setMessage(String.format(getString(R.string.activity_detail_uninstall_message),modelApp.name))
+                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // Code to delete app
+                            }
+                        }).setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                }).setCancelable(false).create().show();
+
+            }
+        });
+
+
 
     }
 

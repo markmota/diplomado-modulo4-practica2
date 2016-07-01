@@ -16,4 +16,8 @@
     <string name="activity_detail_message_noApp_info">Could\'t load app information detail :(</string>
     <string name="activity_edit_btn_label_change">Edit</string>
     <string name="activity_edit_message_app_edited">The app was edited!</string>
+    <string name="activity_detal_btn_label_open">Open</string>
+    <string name="activity_detail_mesagge_desinstalled">Desinstalled!</string>
+    <string name="activity_detail_uninstall_title">Uninstall App</string>
+    <string name="activity_detail_uninstall_message">Wold you like to desintall the app: %s</string>
 </resources>
