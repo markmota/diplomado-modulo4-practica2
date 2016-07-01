@@ -182,7 +182,6 @@ public class AppsDataSource {
     }
     public void deleteItem(int id){
 
-
         String[] args = new String[] {String.valueOf(id)};
         String where= MySqliteHelper.COLUMN_ID+"=? ";
         db.delete(MySqliteHelper.APP_TABLE_NAME,where,args);
