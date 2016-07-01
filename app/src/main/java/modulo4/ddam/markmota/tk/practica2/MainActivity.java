@@ -1,19 +1,39 @@
 package modulo4.ddam.markmota.tk.practica2;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 
 import modulo4.ddam.markmota.tk.practica2.fragments.FragmentList;
+import modulo4.ddam.markmota.tk.practica2.services.ServiceUninstall;
+import modulo4.ddam.markmota.tk.practica2.services.ServiceUpdate;
 
 
 public class MainActivity extends AppCompatActivity {
 
+
+    // Crating broadcastReceivers and configuration what to do when the service ends the job
+    private BroadcastReceiver broadcastReceiverUpdated = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            chargeFragmentListApps();
+        }
+    };
+    private BroadcastReceiver broadcastReceiverUninstalled = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            chargeFragmentListApps();
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,5 +85,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         chargeFragmentListApps();
+        //Registering filters an listen the services
+        IntentFilter filterUninstalled = new IntentFilter();
+        filterUninstalled.addAction(ServiceUninstall.ACTION_UNINSTALLED);
+        registerReceiver(broadcastReceiverUninstalled,filterUninstalled);
+        IntentFilter filterUpdated = new IntentFilter();
+        filterUpdated.addAction(ServiceUpdate.ACTION_UPDATED);
+        registerReceiver(broadcastReceiverUpdated,filterUpdated);
     }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        // Unregistering services
+        unregisterReceiver(broadcastReceiverUninstalled);
+        unregisterReceiver(broadcastReceiverUpdated);
+    }
+
 }

@@ -18,7 +18,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".EditActivity" />
-        <activity android:name=".DetailActivity"/>
+        <activity android:name=".DetailActivity" />
+
+        <service
+            android:name=".services.ServiceUninstall"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".services.ServiceUpdate"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

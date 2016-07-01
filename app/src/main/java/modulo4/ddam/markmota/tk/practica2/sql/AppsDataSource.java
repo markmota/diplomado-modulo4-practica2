@@ -92,7 +92,7 @@ public class AppsDataSource {
     {
         List<ModelApp> modelItemList = new ArrayList<>();
 
-        Cursor cursor =db.query(MySqliteHelper.APP_TABLE_NAME,null,null,null,null,null,MySqliteHelper.APP_COLUMN_INSTALLED+", "+MySqliteHelper.APP_COLUMN_UPDATED+", "+MySqliteHelper.APP_COLUMN_EDITED+" ASC");
+        Cursor cursor =db.query(MySqliteHelper.APP_TABLE_NAME,null,null,null,null,null,MySqliteHelper.APP_COLUMN_INSTALLED+" DESC");
         while (cursor.moveToNext())
         {
             int id=cursor.getInt(cursor.getColumnIndexOrThrow(MySqliteHelper.COLUMN_ID));
@@ -164,6 +164,28 @@ public class AppsDataSource {
             db.update(MySqliteHelper.APP_TABLE_NAME,fields_to_update,where,args);
         }
         return false;
+    }
+
+    public void setUpdated(int id){
+
+            Date date=new Date();
+            Timestamp timestamp=new Timestamp(date.getTime());
+
+            ContentValues fields_to_update = new ContentValues();
+            fields_to_update.put(MySqliteHelper.APP_COLUMN_STATUS,0);
+            fields_to_update.put(MySqliteHelper.APP_COLUMN_UPDATED,String.valueOf(timestamp));
+            String[] args = new String[] {String.valueOf(id)};
+            String where= MySqliteHelper.COLUMN_ID+"=? ";
+            db.update(MySqliteHelper.APP_TABLE_NAME,fields_to_update,where,args);
+
+
+    }
+    public void deleteItem(int id){
+
+
+        String[] args = new String[] {String.valueOf(id)};
+        String where= MySqliteHelper.COLUMN_ID+"=? ";
+        db.delete(MySqliteHelper.APP_TABLE_NAME,where,args);
     }
 
 

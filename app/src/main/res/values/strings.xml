@@ -27,5 +27,13 @@
     <string name="activity_detal_btn_label_open">Open</string>
     <string name="activity_detail_mesagge_desinstalled">Desinstalled!</string>
     <string name="activity_detail_uninstall_title">Uninstall App</string>
-    <string name="activity_detail_uninstall_message">Wold you like to desintall the app: \"%s\" ?</string>
+    <string name="activity_detail_uninstall_message">Would you like to desintall the app: \"%s\" ?</string>
+    <string name="service_uninstall_label_title">Uninstalling App</string>
+    <string name="service_uninstall_label_content">Uninstalling the app: \"%s\"</string>
+    <string name="service_uninstall_label_title_completed">App uninstalled</string>
+    <string name="service_uninstall_label_completed">The app \"%s\" was successfully uninstalled</string>
+    <string name="service_update_label_title">Updating App</string>
+    <string name="service_update_label_content">Updating the app: \"%s\"</string>
+    <string name="service_update_label_completed">The app \"%s\" was successfully updated</string>
+    <string name="service_update_label_title_completed">App updated!</string>
 </resources>
